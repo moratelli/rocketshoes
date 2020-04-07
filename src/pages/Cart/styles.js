@@ -56,6 +56,10 @@ export const EmptyCart = styled.div`
     text-transform: uppercase;
     transition: background 0.2;
     margin-top: 25px;
+
+    &:hover {
+      background: ${darken(0.03, '#7159c1')};
+    }
   }
 `;
 
