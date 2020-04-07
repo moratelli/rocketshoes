@@ -19,6 +19,7 @@ class Home extends Component {
 
     const data = response.data.map((product) => ({
       ...product,
+      photoUrl: `${window.location.origin}/assets/images/${product.image}`,
       priceFormatted: formatPrice(product.price),
     }));
 
@@ -39,7 +40,7 @@ class Home extends Component {
       <ProductList>
         {products.map((product) => (
           <li key={product.id}>
-            <img src={product.image} alt={product.title} />
+            <img src={product.photoUrl} alt={product.title} />
             <strong>{product.title}</strong>
             <span>{product.priceFormatted}</span>
 

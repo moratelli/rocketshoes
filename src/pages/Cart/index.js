@@ -38,7 +38,7 @@ function Cart({ cart, total, removeFromCart, updateAmountRequest }) {
           {cart.map((product) => (
             <tr>
               <td>
-                <img src={product.image} alt={product.title} />
+                <img src={product.photoUrl} alt={product.title} />
               </td>
               <td>
                 <strong>{product.title}</strong>
@@ -87,6 +87,7 @@ const mapStateToProps = (state) => ({
   cart: state.cart.map((product) => ({
     ...product,
     subtotal: formatPrice(product.price * product.amount),
+    photoUrl: `${window.location.origin}/assets/images/${product.image}`,
   })),
   total: formatPrice(
     state.cart.reduce((total, product) => {
